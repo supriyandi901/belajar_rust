@@ -3,7 +3,7 @@ belajar rust dari pemula hingga expert
 Roadmap
 Level 1 - Rust Basic
 
-Level  - Rust Ownership Master
+Level 2 - Rust Ownership Master
 
 Level 3 - Rust Intermediate
 
