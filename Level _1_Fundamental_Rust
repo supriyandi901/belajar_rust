@@ -2,3 +2,99 @@ Sebelum mulai belajar, ada pertanyaan kecil yang mungkin terbesit dalam benak ka
 Mengapa Rust diciptakan?
 bagaimana cara berpikir Rust? dan 
 mengapa perusahaan besar mulai menggunakannya?
+
+Tujuan Pembelajaran
+Setelah menyelesaikan modul ini, Anda akan memahami:
+- Mengapa Rust dibuat?
+- Masalah yang ingin diselesaikan Rust?
+- Perbedaan Rust dengan C, C++, Go, Java, dan Python?
+- Filosofi desain Rust?
+- Alasan mengapa Ownership menjadi fitur utama?
+- Mengapa banyak perusahaan besar mengadopsi Rust?
+
+Apa itu Rust?
+Rust adalah bahasa pemograman general-purpose yang dirancang untuk menghasilkan program yang:
+-  sangat cepat
+-  sangat aman terhadap kesalahan memori
+-  mendukung concurency dengan aman
+-  tidak memerlukan Grabage Collector
+
+Rust mulai dikembangkan oleh Graydon Hoare pada tahun 2006 dan kemudian didukung oleh Mozilla sebelum pengembangannya diteruskan oleh Rust Foundation. Rust sebagai bahasa yang menggabungkan performa sistem tingkat rendah dengan fitur modern dan keamanan tipe.
+
+Mengapa Rust Diciptakan?
+
+Sebelum Rust hadir, programmer sistem umumnya memilih dua pendekatan.
+
+1. Pendekatan 1
+Menggunakan C atau C++.
+Keuntungannya:
+- sangat cepat,
+- kontrol penuh terhadap memori.
+
+Kekurangannya:
+- mudah terjadi memory leak,
+- buffer overflow,
+- dangling pointer,
+- double free,
+- data race.
+
+2. Pendekatan 2
+
+Menggunakan Java, Python, atau Go.
+
+Keuntungannya:
+- mudah diprogram,
+- aman terhadap banyak kesalahan memori.
+
+Kekurangannya:
+- bergantung pada Garbage Collector,
+- konsumsi memori lebih besar,
+- kadang muncul jeda (pause) karena proses Garbage Collector.
+
+Rust mencoba mengambil kelebihan dari kedua dunia tersebut:
+- performa setara C/C++,
+- keamanan memori tanpa Garbage Collector.
+
+Rust memilik tiga tujuan utama:
+
+1. Memory Safety
+Program harus aman dari kesalahan memori
+Contoh masalah di C: malloc(), pointer, free(), pointer nasih dipakai, segmentation fault
+pada Rust, Compiler mencegah kesalahan tersebut sebelum program dijalankan.
+
+2. Fearless Concurrency
+Program multihread sering kali sulit karena data race.
+Rust memeriksa aturan akses data saat proses kompilasi sehingga menghasilkan banyak bug concurrency dapat dicegah sejak awal.
+
+3. Zero-Cost Abstraction
+Rust menyediakan fitur modern seperti generic, iterator dan trait tanpa menambah biaya performa saat program dijalankan.
+Artinya kita tetap mendapatkan code yang cepat sekaligus mudah dipelajari dan dipelihara.
+
+
+Mengapa Rust Sangat Cepat?
+Rust dikompilasi langsung menjadi kode mesin.
+alur sederhananya seperti ini:
+source code (.rs) -> compiler Rust (rustc) -> LLVM -> Machine Code -> Executable
+Tidak ada virtual machine dan tidak ada interpreter ketika program dijalankan.
+
+Grabage Collector Vs Ownership
+Python
+Object -> Heap -> Reference Counting -> Grabage Collector
+Java
+Object -> Heap -> JVM -> Grabage Collector
+Rust
+Object -> Owner -> Borrow Checker -> Compiler -> Executable
+
+yang membuat Rust unik, semua pemeriksaan dilakukan sebelum program dijalankan.
+
+Mengapa Onwership sangat penting?
+Onwership merupakan fitur yang membedakan Rust dengan bahasa lain.
+Onwership ini yang dapat menjamin keamanan memory tanpa Grabae Collection.
+misalkan sebuah Rumah, rumah tersebut hanya memiliki satu pemilik.
+ketika rumah dijual maka pemilik lama tidak memiliki hak atas rumah tersebut (konsep move pada Rust).
+
+
+
+
+
+
