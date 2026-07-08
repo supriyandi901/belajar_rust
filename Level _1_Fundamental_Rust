@@ -93,9 +93,65 @@ Onwership ini yang dapat menjamin keamanan memory tanpa Grabae Collection.
 misalkan sebuah Rumah, rumah tersebut hanya memiliki satu pemilik.
 ketika rumah dijual maka pemilik lama tidak memiliki hak atas rumah tersebut (konsep move pada Rust).
 
+Rust vs Bahasa Lain
+ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _  _ _ _ _ 
+|Bahasa	| Cepat	| Aman Memori	| Garbage Collector|
+| C	    |   ✅	|    ❌	      |        ❌        |
+| C++	  |   ✅	|    ❌	      |        ❌        |
+| Java	|   ⚠️	|    ✅	      |        ✅        |
+| Python|	  ❌	|    ✅	      |        ✅        |
+| Go	  |   ✅	|    ✅	      |        ✅        |
+| Rust	|   ✅	|    ✅	      |        ❌        |
+- - - - - - - - - - - - - - - - - - - - - - - - - - 
 
+Cara Berpikir Seorang Rust Developer
 
+Saat menulis Rust, jangan langsung berpikir:
+"Bagaimana cara membuat program ini berjalan?"
+Tetapi biasakan bertanya:
+- Siapa pemilik data ini?
+- Berapa lama data ini hidup?
+- Siapa yang boleh meminjam data?
+- Kapan data akan dibebaskan dari memori?
+- Apakah ada kemungkinan dua thread mengakses data yang sama secara tidak aman?
+Pola pikir inilah yang membedakan Rust dari banyak bahasa lain.
 
+Di Mana Rust Digunakan?
+
+Rust banyak digunakan untuk:
+- Backend API berperforma tinggi.
+- Sistem operasi.
+- Database.
+- WebAssembly.
+- CLI Tools.
+- Blockchain.
+- Embedded systems.
+- Network programming.
+- Game engine.
+- AI inference.
+
+Perusahaan yang Menggunakan Rust
+Beberapa perusahaan yang telah menggunakan Rust dalam berbagai proyek mereka antara lain:
+- Microsoft
+- Amazon
+- Google
+- Cloudflare
+- Discord
+- Dropbox
+- Meta
+
+Latihan
+- Jelaskan dengan kata-kata Anda sendiri mengapa Rust tidak membutuhkan Garbage Collector.
+- Apa keuntungan melakukan pemeriksaan kesalahan memori saat proses kompilasi?
+- Mengapa Ownership menjadi fitur inti Rust?
+- Sebutkan tiga kelebihan Rust dibandingkan C++.
+- Kapan Anda lebih memilih Rust dibanding Python?
+
+Ringkasan
+Pada modul pertama ini kita memahami bahwa Rust bukan sekadar bahasa pemrograman baru. 
+Rust dirancang untuk menyelesaikan masalah klasik dalam pemrograman sistem yaitu 
+menjaga performa setinggi C/C++ sambil memberikan keamanan memori melalui ownership, borrowing, dan pemeriksaan oleh compiler. 
+Konsep-konsep tersebut akan menjadi fondasi seluruh pembelajaran berikutnya.
 
 
 
